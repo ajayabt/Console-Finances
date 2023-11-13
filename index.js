@@ -86,3 +86,57 @@ var finances = [
   ['Jan-2017', 138230],
   ['Feb-2017', 671099],
 ];
+
+
+//1. Total Months in Data Set = 'arrayLength'
+//1.a. Console log 'array length' as 'total months.
+console.log('Total Months: '+ finances.length)
+
+//2. Sum total of 'numbers' in array
+//2.a. Console log 'Total'...
+
+//3.a. Calculate change month to month.
+//3.b. Laternumber-previousmonth = PLchange
+//3.c. Previous number needs updating each time
+
+//3.d. 
+// LaterNumber-Previousmonth=PLchange
+    //(n+1)-(n) = PLchange or something like that
+
+//4.a Use changes loop to identify largest rise and fall. If newchange>oldchange --> console.log new change//pr
+//OR find largest array value and display, find smallest array value and display.
+
+  var changes=[]
+
+  for (let i=1; i<finances.length; i++){
+    currentMonth=finances[i][1];
+    previousMonth=finances[i-1][1]; 
+  change=currentMonth-previousMonth; 
+
+  changes.push([finances[i][0], change])
+}
+
+//Average Change
+let totalChange=0;
+for(let i=0; i<changes.length; i++){
+  totalChange += changes[i][1]
+};
+
+avgChange=totalChange/(finances.length -1)
+
+console.log('Average Change ' + avgChange)
+
+//finding max change, loop runs for greatest number, currentValue becomes max until "beaten"
+//Created variable indexofMax to log the "month" alongside the highest value
+
+let max = -Infinity
+
+for (let i=0; i<changes.length;i++){
+
+  let currentValue=changes[i][1];
+  if (currentValue>max) {max=currentValue;
+      indexofMax=i;};
+  
+}
+console.log(changes[indexofMax][0], max)
+
