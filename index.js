@@ -98,7 +98,7 @@ let total=0
 for(let i=0; i<finances.length; i++){
   total += finances[i][1];
 }
-console.log(total)
+console.log('Total: $' + total)
 
 //3.a. Calculate change month to month.
 //3.b. Laternumber-previousmonth = PLchange
@@ -128,7 +128,7 @@ for(let i=0; i<changes.length; i++){
 
 avgChange=totalChange/(finances.length -1)
 
-console.log('Average Change ' + avgChange)
+console.log('Average Change: $' + avgChange)
 
 //finding max change, loop runs for greatest number, currentValue becomes max until "beaten"
 //Created variable indexofMax to log the "month" alongside the highest value
@@ -143,7 +143,7 @@ for (let i=0; i<changes.length;i++){
   
 }
 
-console.log(changes[indexofMax][0], max);
+console.log(`Greatest Increase in Profits/Losses: ${changes[indexofMax][0]}: $${max}`);
 
 let min= Infinity
 
@@ -153,4 +153,4 @@ for(let i=0; i<changes.length; i++){
   if (currentValue<min) {min=currentValue;
       indexofMin=i;};
 }
-console.log(changes[indexofMin][0], min)
+console.log(`Greatest descrease in Profits/Losses: ${changes[indexofMin][0]}: $${min}`);
