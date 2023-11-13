@@ -94,11 +94,15 @@ console.log('Total Months: '+ finances.length)
 
 //2. Sum total of 'numbers' in array
 //2.a. Console log 'Total'...
+let total=0
+for(let i=0; i<finances.length; i++){
+  total += finances[i][1];
+}
+console.log(total)
 
 //3.a. Calculate change month to month.
 //3.b. Laternumber-previousmonth = PLchange
 //3.c. Previous number needs updating each time
-
 //3.d. 
 // LaterNumber-Previousmonth=PLchange
     //(n+1)-(n) = PLchange or something like that
@@ -120,7 +124,7 @@ console.log('Total Months: '+ finances.length)
 let totalChange=0;
 for(let i=0; i<changes.length; i++){
   totalChange += changes[i][1]
-};
+};  
 
 avgChange=totalChange/(finances.length -1)
 
@@ -129,7 +133,7 @@ console.log('Average Change ' + avgChange)
 //finding max change, loop runs for greatest number, currentValue becomes max until "beaten"
 //Created variable indexofMax to log the "month" alongside the highest value
 
-let max = -Infinity
+let max= -Infinity
 
 for (let i=0; i<changes.length;i++){
 
@@ -138,5 +142,15 @@ for (let i=0; i<changes.length;i++){
       indexofMax=i;};
   
 }
-console.log(changes[indexofMax][0], max)
 
+console.log(changes[indexofMax][0], max);
+
+let min= Infinity
+
+for(let i=0; i<changes.length; i++){
+
+  let currentValue=changes[i][1];
+  if (currentValue<min) {min=currentValue;
+      indexofMin=i;};
+}
+console.log(changes[indexofMin][0], min)
