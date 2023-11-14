@@ -89,11 +89,12 @@ var finances = [
 
 
 //1. Total Months in Data Set = 'arrayLength'
-//1.a. Console log 'array length' as 'total months.
+
 console.log('Total Months: '+ finances.length)
 
 //2. Sum total of 'numbers' in array
 //2.a. Console log 'Total'...
+
 let total=0
 for(let i=0; i<finances.length; i++){
   total += finances[i][1];
@@ -101,18 +102,14 @@ for(let i=0; i<finances.length; i++){
 console.log('Total: $' + total)
 
 //3.a. Calculate change month to month.
-//3.b. Laternumber-previousmonth = PLchange
 //3.c. Previous number needs updating each time
-//3.d. 
-// LaterNumber-Previousmonth=PLchange
-    //(n+1)-(n) = PLchange or something like that
 
-//4.a Use changes loop to identify largest rise and fall. If newchange>oldchange --> console.log new change//pr
-//OR find largest array value and display, find smallest array value and display.
+// Calculating changes and making an array
 
   var changes=[]
 
-  for (let i=1; i<finances.length; i++){
+  for (let i=1; i<finances.length; i++)
+  {
     currentMonth=finances[i][1];
     previousMonth=finances[i-1][1]; 
   change=currentMonth-previousMonth; 
@@ -120,7 +117,8 @@ console.log('Total: $' + total)
   changes.push([finances[i][0], change])
 }
 
-//Average Change
+//Average Change using array 'changes'
+
 let totalChange=0;
 for(let i=0; i<changes.length; i++){
   totalChange += changes[i][1]
@@ -128,7 +126,7 @@ for(let i=0; i<changes.length; i++){
 
 avgChange=totalChange/(finances.length -1)
 
-console.log('Average Change: $' + avgChange)
+console.log('Average Change: $' + avgChange.toFixed(2))
 
 //finding max change, loop runs for greatest number, currentValue becomes max until "beaten"
 //Created variable indexofMax to log the "month" alongside the highest value
@@ -153,4 +151,5 @@ for(let i=0; i<changes.length; i++){
   if (currentValue<min) {min=currentValue;
       indexofMin=i;};
 }
-console.log(`Greatest descrease in Profits/Losses: ${changes[indexofMin][0]}: $${min}`);
+console.log(`Greatest Decrease in Profits/Losses: ${changes[indexofMin][0]}: $${min}`);
+
