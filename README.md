@@ -44,7 +44,7 @@ All work is my own, Thank you to the bootcamp instructors and TAs who have enabl
 
 ## Screenshot and links
 
-![Alt text](<Captura de pantalla 2023-11-14 123256.png>)
+![Alt text](<Images/Captura de pantalla 2023-11-14 123256.png>)
 
 GitHub LINK: https://github.com/ajayabt/Console-Finances/settings/pages
 
